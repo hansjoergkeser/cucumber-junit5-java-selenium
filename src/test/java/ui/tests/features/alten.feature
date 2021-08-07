@@ -1,6 +1,6 @@
-Feature: You can find Alten Switzerland AG via Ecosia search engine
+Feature: About Alten Switzerland AG information
 
-Scenario: Let's search for Alten
-  Given I opened website "Alten"
-  When I click on tab "About" on homepage
-  Then I should see web page "About"
+  Scenario: Let's go to the Alten About page
+    Given I opened website "Alten"
+    When I click on tab "About" on homepage
+    Then I should see web page "About"

@@ -17,9 +17,8 @@ public class HomePage extends BasePage {
     }
 
     public void acceptCookieDefaultSettings() {
-        if (isElementDisplayed(cookieAcceptButton)) {
-            clickOnElement(cookieAcceptButton);
-        }
+        waitForElementVisible(cookieAcceptButton);
+        clickOnElement(cookieAcceptButton);
     }
 
     public void clickOnSearchField() {

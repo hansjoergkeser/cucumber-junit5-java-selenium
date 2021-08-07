@@ -5,10 +5,10 @@ import ui.pageobjects.BasePage;
 
 public class AboutPage extends BasePage {
 
-    private final By selector = By.id("...");
+    private final By videoPlayer = By.className("youtube_player");
 
     public boolean isDisplayed() {
-        return isElementDisplayed(selector);
+        return isElementDisplayed(videoPlayer);
     }
 
 }

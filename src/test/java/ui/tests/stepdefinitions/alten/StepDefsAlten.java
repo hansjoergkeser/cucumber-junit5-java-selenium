@@ -9,6 +9,7 @@ import ui.pageobjects.alten.AboutPage;
 import ui.pageobjects.alten.HomePage;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class StepDefsAlten {
 
@@ -22,12 +23,15 @@ public class StepDefsAlten {
 
     @When("I click on tab {string} on homepage")
     public void i_click_on_tab_on_homepage(String tabName) {
-        homePage.clickOnTab(tabName);
+        try {
+            homePage.clickOnTab(HomePage.HomePageTab.valueOf(tabName.toUpperCase()));
+        } catch (IllegalArgumentException i) {
+            fail("Homepage tab does not exist: " + tabName);
+        }
     }
 
     @Then("I should see web page {string}")
     public void iShouldSeeWebPage(String webPageName) {
-        System.out.println("Asserting web page: " + webPageName);
         assertTrue(new AboutPage().isDisplayed(), "Not on Alten: " + webPageName);
     }
 

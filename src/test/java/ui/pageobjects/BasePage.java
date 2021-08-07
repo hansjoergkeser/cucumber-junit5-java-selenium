@@ -1,10 +1,16 @@
 package ui.pageobjects;
 
-public class BasePage {
+import org.openqa.selenium.By;
+import ui.driver.WebDriver;
 
-    protected boolean isElementDisplayed(String bySelector) {
-//        return driver.findElement(bySelector).isDisplayed();
-        return true;
+public class BasePage extends WebDriver {
+
+    protected boolean isElementDisplayed(By selector) {
+        return driver.findElement(selector).isDisplayed();
+    }
+
+    protected void clickOnElement(By selector) {
+        driver.findElement(selector).click();
     }
 
 }

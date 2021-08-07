@@ -4,24 +4,20 @@ import org.openqa.selenium.By;
 import ui.pageobjects.BasePage;
 
 import static org.junit.jupiter.api.Assertions.fail;
-import static ui.pageobjects.alten.HomePage.HomePageTabs.ABOUT;
 
 public class HomePage extends BasePage {
 
     private static final String URL = "https://www.alten.ch";
 
-    private final By cookieDisclaimer = By.id("tarteaucitron");
     private final By cookieAcceptButton = By.id("tarteaucitronPersonalize2");
     private final By searchButton = By.className("search");
-    private final By tabHome = By.id("menu-item-63");
-    private final By tabAbout = By.id("menu-item-64");
 
     public void open() {
         driver.get(URL);
     }
 
     public void acceptCookieDefaultSettings() {
-        if (isElementDisplayed(cookieDisclaimer)) {
+        if (isElementDisplayed(cookieAcceptButton)) {
             clickOnElement(cookieAcceptButton);
         }
     }
@@ -30,24 +26,34 @@ public class HomePage extends BasePage {
         clickOnElement(searchButton);
     }
 
-    public void clickOnTab(String tabName) {
-        if (ABOUT.getName().equalsIgnoreCase(tabName)) {
-            clickOnElement(tabAbout);
-        } else {
-            fail("Invalid homepage tab name");
+    public void clickOnTab(HomePageTab homePageTab) {
+        switch (homePageTab) {
+            case ABOUT:
+                clickOnHomePageTab(homePageTab.getName());
+                break;
+            case EXPERTISE:
+                break;
+            default:
+                fail("Invalid homepage tab");
+                break;
         }
     }
 
-    enum HomePageTabs {
-        ABOUT("ABOUT");
+    private void clickOnHomePageTab(String tab) {
+        clickOnElement(By.xpath("//a[contains(@href,'alten.ch/#" + tab.toLowerCase() + "')]"));
+    }
 
-        private final String tabName;
+    public enum HomePageTab {
+        ABOUT("ABOUT"),
+        EXPERTISE("EXPERTISE");
 
-        HomePageTabs(String key) {
+        private String tabName;
+
+        HomePageTab(String key) {
             this.tabName = key;
         }
 
-        String getName() {
+        public String getName() {
             return tabName;
         }
     }

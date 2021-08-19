@@ -30,4 +30,17 @@ public class BasePage {
         }
     }
 
+    protected void waitForElementClickable(By selector) {
+        try {
+            webDriverWait.until(ExpectedConditions.elementToBeClickable(selector));
+        } catch (TimeoutException ignored) {
+            System.out.println("timeout for waitForElementClickable");
+        }
+    }
+
+    protected void enterText(By selector, String text) {
+        driver.findElement(selector).clear();
+        driver.findElement(selector).sendKeys(text);
+    }
+
 }

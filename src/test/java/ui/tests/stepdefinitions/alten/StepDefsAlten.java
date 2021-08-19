@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import ui.driver.WebDriverSingleton;
 import ui.pageobjects.alten.AboutPage;
 import ui.pageobjects.alten.HomePage;
+import ui.utils.TestUtils;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -35,9 +36,9 @@ public class StepDefsAlten {
         assertTrue(new AboutPage().isDisplayed(), "Not on Alten: " + webPageName);
     }
 
-    // junit5 @After doesn't work, using cucumber-junit-platform-engine instead
-    @After("@ui")
+    @After
     public void tearDown() {
+        TestUtils.sleepSomeSecs();
         WebDriverSingleton.tearDown();
     }
 

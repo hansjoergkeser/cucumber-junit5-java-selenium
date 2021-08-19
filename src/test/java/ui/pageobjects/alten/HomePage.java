@@ -2,6 +2,7 @@ package ui.pageobjects.alten;
 
 import org.openqa.selenium.By;
 import ui.pageobjects.BasePage;
+import ui.utils.TestUtils;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -19,6 +20,7 @@ public class HomePage extends BasePage {
     public void acceptCookieDefaultSettings() {
         waitForElementVisible(cookieAcceptButton);
         clickOnElement(cookieAcceptButton);
+        TestUtils.sleepSomeSecs();
     }
 
     public void clickOnSearchField() {

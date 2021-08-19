@@ -1,4 +1,4 @@
-@ui
+
 Feature: About Alten Switzerland AG information
 
   Scenario: Let's go to the Alten About page

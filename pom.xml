@@ -13,11 +13,11 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
-        <selenium-java.version>3.141.59</selenium-java.version>
-
         <junit.version>5.7.0</junit.version>
         <cucumber.version>5.5.0</cucumber.version>
+        <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+
+        <selenium-java.version>3.141.59</selenium-java.version>
         <cucumber-junit-platform-engine.version>6.10.3</cucumber-junit-platform-engine.version>
     </properties>
 
@@ -52,11 +52,13 @@
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- not compatible with junit vintage engine
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit-platform-engine</artifactId>
             <version>${cucumber-junit-platform-engine.version}</version>
         </dependency>
+        -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>

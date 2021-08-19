@@ -65,6 +65,13 @@
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://support.smartbear.com/zephyr-scale-server/docs/test-automation/integrations/junit.html -->
+        <dependency>
+            <groupId>com.adaptavist</groupId>
+            <artifactId>tm4j-junit-integration</artifactId>
+            <version>1.0.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>

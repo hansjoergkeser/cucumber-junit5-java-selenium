@@ -5,11 +5,14 @@ import ui.pageobjects.BasePage;
 
 public class SearchResultsPage extends BasePage {
 
-    private final By selector = By.id("...");
+    private final By searchResultEntry = By.className("searchWrapper");
 
-    public boolean isDisplayed() {
-        // TODO
-        return true;
+    public boolean isEmpty() {
+        return driver.findElements(searchResultEntry).size() == 0;
+    }
+
+    public boolean hasSearchResults() {
+        return driver.findElements(searchResultEntry).size() > 0;
     }
 
 }

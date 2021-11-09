@@ -22,12 +22,13 @@ public class StepDefsAkros {
 
     @When("I search for {string}")
     public void i_search_for(String searchTerm) {
+        assertTrue(homePage.isSearchInputVisible(), "Did not find search input field on homepage.");
         homePage.searchFor(searchTerm);
     }
 
     @Then("I should see search results")
     public void assertSearchResults() {
-        assertTrue(new SearchResultsPage().isDisplayed());
+        assertTrue(new SearchResultsPage().hasSearchResults(), "Did not find any entry on search result page.");
     }
 
     @After

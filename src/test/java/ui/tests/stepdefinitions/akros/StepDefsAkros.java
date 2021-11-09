@@ -13,7 +13,7 @@ public class StepDefsAkros {
     private final HomePage homePage = new HomePage();
 
     @Given("I opened the akros homepage")
-    public void i_opened_the_bls_homepage() {
+    public void i_opened_the_akros_homepage() {
         homePage.open();
     }
 

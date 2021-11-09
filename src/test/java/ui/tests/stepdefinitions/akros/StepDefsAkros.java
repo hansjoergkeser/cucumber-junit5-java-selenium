@@ -1,21 +1,20 @@
-package ui.tests.stepdefinitions.bls;
+package ui.tests.stepdefinitions.akros;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import ui.driver.WebDriverSingleton;
-import ui.pageobjects.bls.HomePage;
+import ui.pageobjects.akros.HomePage;
 import ui.utils.TestUtils;
 
-public class StepDefsBls {
+public class StepDefsAkros {
 
     private final HomePage homePage = new HomePage();
 
-    @Given("I opened the bls homepage")
+    @Given("I opened the akros homepage")
     public void i_opened_the_bls_homepage() {
         homePage.open();
-        homePage.acceptCookieDefaultSettings();
     }
 
     @When("I click on the search field")
@@ -35,7 +34,7 @@ public class StepDefsBls {
 
     @After
     public void tearDown() {
-        TestUtils.sleepSomeSecs();
+        TestUtils.sleep2Secs();
         WebDriverSingleton.tearDown();
     }
 

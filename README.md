@@ -9,3 +9,5 @@ or in IntelliJ by right-click RUN on class RunCucumberTest
 
 to test only certain features:
 mvn clean test -Dtest=*alten.RunCucumberTest
+
+It is recommended to install a plugin in IntelliJ like "Cucumber for Java"

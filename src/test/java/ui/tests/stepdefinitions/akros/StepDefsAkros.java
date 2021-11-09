@@ -6,7 +6,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import ui.driver.WebDriverSingleton;
 import ui.pageobjects.akros.HomePage;
+import ui.pageobjects.akros.SearchResultsPage;
 import ui.utils.TestUtils;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class StepDefsAkros {
 
@@ -17,19 +20,14 @@ public class StepDefsAkros {
         homePage.open();
     }
 
-    @When("I click on the search field")
-    public void i_click_on_the_search_field() {
-        homePage.clickOnSearchField();
+    @When("I search for {string}")
+    public void i_search_for(String searchTerm) {
+        homePage.searchFor(searchTerm);
     }
 
-    @When("I enter the search term {string}")
-    public void i_enter_the_search_term(String string) {
-        homePage.searchFor(string);
-    }
-
-    @Then("I should see the search term {string} in the search input")
-    public void i_should_see_the_search_term_in_the_search_input(String string) {
-        // get text and compare
+    @Then("I should see search results")
+    public void assertSearchResults() {
+        assertTrue(new SearchResultsPage().isDisplayed());
     }
 
     @After

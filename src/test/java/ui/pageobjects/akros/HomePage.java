@@ -5,21 +5,31 @@ import ui.pageobjects.BasePage;
 
 public class HomePage extends BasePage {
 
-    private final By selector = By.id("...");
+    private static final String BASE_URL = "https://www.akros.ch/";
+
+    private final By akrosLogo = By.className("logo");
+
+    //    private final By searchInput = By.className("searchBtnForm");
+    private final By searchInput = By.id("s");
+    private final By searchButton = By.id("sBtn");
 
     public boolean isDisplayed() {
-        return isElementDisplayed(selector);
+        return isElementDisplayed(searchInput);
     }
 
     public void open() {
-        // TODO
-    }
-
-    public void searchFor(String searchTerm) {
-        // TODO
+        driver.get(BASE_URL);
+        waitForElementVisible(akrosLogo);
     }
 
     public void clickOnSearchField() {
-        // TODO
+        clickOnElement(searchInput);
     }
+
+    public void searchFor(String searchTerm) {
+        clickOnSearchField();
+        enterText(searchInput, searchTerm);
+        clickOnElement(searchButton);
+    }
+
 }

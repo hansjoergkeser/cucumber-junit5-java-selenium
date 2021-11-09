@@ -8,7 +8,7 @@ Get started:
 - check your chrome browser version and download the suitable driver for local execution
   <br>https://chromedriver.chromium.org/downloads
 - store it under src/test/resources
-- set driver in class [WebDriverSingleton](src/test/java/ui/driver/WebDriverSingleton.java)
+- set *webdriver.chrome.driver* in class [WebDriverSingleton](src/test/java/ui/driver/WebDriverSingleton.java)
 
 First run of tests in Terminal by command:
 <br>

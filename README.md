@@ -3,7 +3,7 @@
 Small basis setup project demonstrating Gherkin scenarios to execute ui tests with Selenium
 
 Get started:<br>
-- download the suitable driver for local execution 
+- download the suitable driver for local execution https://chromedriver.chromium.org/downloads
 - store it under src/test/resources
 - set it in WebDriverSingleton class
 

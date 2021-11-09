@@ -11,12 +11,13 @@ public class WebDriverSingleton {
 
     private static WebDriver INSTANCE;
 
-    public static final long PAGE_LOAD_TIMEOUT = 20;
+    public static final long PAGE_LOAD_TIMEOUT = 10;
     public static final long IMPLICIT_WAIT_TIMEOUT = 3;
 
     public static WebDriver getInstance() {
         if (INSTANCE == null) {
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver_linux64v89/chromedriver");
+//            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_linux64v89/chromedriver");
+            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_win32v95/chromedriver.exe");
 
             ChromeOptions options = new ChromeOptions();
             options.addArguments("start-maximized"); // open Browser in maximized mode

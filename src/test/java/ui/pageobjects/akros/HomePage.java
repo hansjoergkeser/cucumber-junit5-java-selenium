@@ -30,6 +30,7 @@ public class HomePage extends BasePage {
     }
 
     public void searchFor(String searchTerm) {
+        waitForElementClickable(searchInput);
         clickOnElement(searchInput);
         enterText(searchInput, searchTerm);
         clickOnElement(searchButton);

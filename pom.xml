@@ -17,8 +17,9 @@
         <cucumber.version>7.0.0</cucumber.version>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
 
-        <selenium-java.version>4.0.0</selenium-java.version>
+        <selenium-java.version>4.1.1</selenium-java.version>
         <cucumber-junit-platform-engine.version>6.10.3</cucumber-junit-platform-engine.version>
+        <tm4j-junit-integration.version>1.0.0</tm4j-junit-integration.version>
     </properties>
 
     <dependencies>
@@ -69,7 +70,7 @@
         <dependency>
             <groupId>com.adaptavist</groupId>
             <artifactId>tm4j-junit-integration</artifactId>
-            <version>1.0.0</version>
+            <version>${tm4j-junit-integration.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

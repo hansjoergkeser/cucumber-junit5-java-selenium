@@ -20,6 +20,7 @@
         <selenium-java.version>4.1.1</selenium-java.version>
         <cucumber-junit-platform-engine.version>6.10.3</cucumber-junit-platform-engine.version>
         <tm4j-junit-integration.version>1.0.0</tm4j-junit-integration.version>
+        <lombok.version>1.18.28</lombok.version>
     </properties>
 
     <dependencies>
@@ -53,27 +54,33 @@
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- not compatible with junit vintage engine
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit-platform-engine</artifactId>
-            <version>${cucumber-junit-platform-engine.version}</version>
-        </dependency>
-        -->
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>${cucumber.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- https://support.smartbear.com/zephyr-scale-server/docs/test-automation/integrations/junit.html -->
-        <dependency>
-            <groupId>com.adaptavist</groupId>
-            <artifactId>tm4j-junit-integration</artifactId>
-            <version>${tm4j-junit-integration.version}</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+		<!-- not compatible with junit vintage engine
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit-platform-engine</artifactId>
+			<version>${cucumber-junit-platform-engine.version}</version>
+		</dependency>
+		-->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://support.smartbear.com/zephyr-scale-server/docs/test-automation/integrations/junit.html -->
+		<dependency>
+			<groupId>com.adaptavist</groupId>
+			<artifactId>tm4j-junit-integration</artifactId>
+			<version>${tm4j-junit-integration.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
 
     <build>
         <plugins>

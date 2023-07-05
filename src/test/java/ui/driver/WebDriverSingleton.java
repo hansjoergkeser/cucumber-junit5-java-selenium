@@ -12,9 +12,8 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 public class WebDriverSingleton {
 
     private static WebDriver INSTANCE;
-
-    public static final long PAGE_LOAD_TIMEOUT = 10;
-    public static final long IMPLICIT_WAIT_TIMEOUT = 3;
+    private static final long PAGE_LOAD_TIMEOUT = 10;
+    private static final long IMPLICIT_WAIT_TIMEOUT = 3;
 
     public static WebDriver getInstance() {
         if (INSTANCE == null) {

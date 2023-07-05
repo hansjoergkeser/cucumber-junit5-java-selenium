@@ -1,6 +1,7 @@
 package ui.pageobjects;
 
 import java.time.Duration;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.driver.WebDriverSingleton;
 
+@Slf4j
 public class BasePage {
 
     private static final long EXPLICIT_WAIT_TIMEOUT = 10L;
@@ -27,7 +29,7 @@ public class BasePage {
         try {
             webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(selector));
         } catch (TimeoutException ignored) {
-            System.out.println("timeout for waitForElementVisible");
+            log.warn("Timeout for waitForElementVisible");
         }
     }
 
@@ -35,7 +37,7 @@ public class BasePage {
         try {
             webDriverWait.until(ExpectedConditions.elementToBeClickable(selector));
         } catch (TimeoutException ignored) {
-            System.out.println("timeout for waitForElementClickable");
+            log.warn("Timeout for waitForElementClickable");
         }
     }
 

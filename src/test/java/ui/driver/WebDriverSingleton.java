@@ -1,12 +1,14 @@
 package ui.driver;
 
 import java.time.Duration;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+@Slf4j
 public class WebDriverSingleton {
 
     private static WebDriver INSTANCE;
@@ -49,7 +51,7 @@ public class WebDriverSingleton {
 
     public static void tearDown() {
         if (INSTANCE != null) {
-            System.out.println("Closing browser and terminating session");
+            log.info("Closing browser and terminating session");
             INSTANCE.quit();
         }
     }

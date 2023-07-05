@@ -1,5 +1,6 @@
 package ui.pageobjects;
 
+import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -9,10 +10,10 @@ import ui.driver.WebDriverSingleton;
 
 public class BasePage {
 
-    public static final Integer EXPLICIT_WAIT_TIMEOUT = 10;
+    private static final long EXPLICIT_WAIT_TIMEOUT = 10L;
 
     protected final WebDriver driver = WebDriverSingleton.getInstance();
-    private final WebDriverWait webDriverWait = new WebDriverWait(driver, EXPLICIT_WAIT_TIMEOUT);
+    private final WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT_TIMEOUT));
 
     protected boolean isElementDisplayed(By selector) {
         return driver.findElement(selector).isDisplayed();

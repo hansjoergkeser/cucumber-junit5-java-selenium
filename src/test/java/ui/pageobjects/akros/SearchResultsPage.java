@@ -5,7 +5,7 @@ import ui.pageobjects.BasePage;
 
 public class SearchResultsPage extends BasePage {
 
-    private final By searchResultsPageTitle2 = By.className("pageInnerWrapper");
+    private final By searchResultsPageTitle = By.className("pageInnerWrapper");
     private final By searchResultEntry = By.className("searchWrapper");
 
     public boolean hasSearchResults() {
@@ -17,7 +17,7 @@ public class SearchResultsPage extends BasePage {
     }
 
     public int parseNumberOfResultsInPageTitle() {
-        String title = driver.findElement(searchResultsPageTitle2).getText();
+        String title = driver.findElement(searchResultsPageTitle).getText();
         return Integer.parseInt(title.substring(title.indexOf("(") + 1, title.indexOf(")")));
     }
 

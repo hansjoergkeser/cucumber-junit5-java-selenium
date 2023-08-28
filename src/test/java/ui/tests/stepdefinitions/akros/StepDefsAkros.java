@@ -41,5 +41,4 @@ public class StepDefsAkros {
         TestUtils.sleep2Secs();
         WebDriverSingleton.tearDown();
     }
-
 }
